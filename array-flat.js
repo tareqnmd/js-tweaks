@@ -17,4 +17,4 @@ const nestedArrayLength = () => {
 	return sum;
 };
 
-console.log(nestedArrayLength(), arr.flat(nestedArrayLength()));
+console.log(nestedArrayLength(), arr.flat(nestedArrayLength()??Infinity));
