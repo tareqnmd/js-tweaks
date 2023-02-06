@@ -8,6 +8,9 @@ const getElm = (link, target) => {
                 resolve(dom.querySelector(target));
             }
         }
+        //xhr.responseType = 'document';
+        //xhr.onload = () => resolve(xhr.response.querySelector(target));
+		xhr.onerror = () => reject(xhr.statusText);
         xhr.send();
     })
 }
