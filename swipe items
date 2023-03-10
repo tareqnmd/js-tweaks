@@ -1,0 +1,21 @@
+let itemUspCount = 0;
+    const itemUsp = [...document.querySelectorAll('.item')];
+
+    const changeItem = () => {
+        itemUsp.map((item, i) => {
+            if (itemUspCount === i) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        })
+        if (itemUspCount === 2) {
+            itemUspCount = 0;
+        } else {
+            itemUspCount++;
+        }
+    };
+
+    setInterval(() => {
+        changeItem();
+    }, 2000);
