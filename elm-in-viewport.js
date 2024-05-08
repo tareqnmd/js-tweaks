@@ -8,3 +8,17 @@ function isElementInViewport(element) {
 		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 	);
 }
+
+function isElementPartiallyVisible(element) {
+	const rect = element.getBoundingClientRect();
+	const viewportWidth =
+		window.innerWidth || document.documentElement.clientWidth;
+	const viewportHeight =
+		window.innerHeight || document.documentElement.clientHeight;
+
+	const isVisible =
+		(rect.top < viewportHeight && rect.bottom > 0) ||
+		(rect.left < viewportWidth && rect.right > 0);
+
+	return isVisible;
+}
